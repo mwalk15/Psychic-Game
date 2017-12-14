@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	
+	<title>The Psychic Game</title>
+</head>
+
+<body>
+
+
+	<div class="container" id="game">
+
+		<h1 class="text-center">Guess what letter I'm thinking of</h1>
+		<br>
+		<br>
+		<h2 span id="wins"></span>Wins:</h2>
+		<br>
+		<br>
+		<h2 span id="losses"></span>Losses:</h2>
+		<br>
+		<br>
+		<h2 span id="guesses"></span>Guesses Left:</h2>
+		<br>
+		<br>
+		<h2 span id="user-guess"></span>Your Guesses So Far:</h2>
+
+	</div>
+	
+	<script type="text/javascript">
+	 
+	 var alphabet = ['a','b','c','d','e','f','g','h','i','j','k','l',
+    'm','n','o','p','q','r','s','t','u','v','w','x','y','z'];
+	var wins = 0;
+	var losses = 0;
+	var guesses = 9;
+	var userGuesses = 0;
+	
+
+
+	document.onkeypress = function(event) {
+	
+    	var userGuess = event.key;
+
+   	 	var computerChoice = alphabet[Math.floor(Math.random() * alphabet.length)];
+
+   	 	console.log(computerChoice)
+
+    if(userGuess === computerChoice){
+        wins++;
+    }else{
+        guesses--;
+    }
+
+    if(guesses = 0){
+        losses++
+    }
+
+    
+  
+    document.getElementById('wins').innerHTML = "Wins: " + wins;
+    document.getElementById('losses').innerHTML = "Losses: " + losses;
+    document.getElementById('guesses').innerHTML = "Guesses left: " + guesses;
+    document.getElementById('user-guess').innerHTML="Your Guesses So Far: " + userGuess;
+}
+	</script>
+</body>
+</html>
