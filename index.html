@@ -12,60 +12,27 @@
 <body>
 
 
-	<div class="container" id="game">
+	<div class="container">
 
 		<h1 class="text-center">Guess what letter I'm thinking of</h1>
-		<br>
-		<br>
-		<h2 span id="wins"></span>Wins:</h2>
-		<br>
-		<br>
-		<h2 span id="losses"></span>Losses:</h2>
-		<br>
-		<br>
-		<h2 span id="guesses"></span>Guesses Left:</h2>
-		<br>
-		<br>
-		<h2 span id="user-guess"></span>Your Guesses So Far:</h2>
+		
+
+		<p span id="wins"></span>Wins: </p>
+		
+		<p span id="losses"></span>Losses: </p>
+	
+		<p span id="guessesLeft"></span>Guesses Left: </p>
+
+		<p span id="uGuess"></span>Your Guesses So Far: </p>
 
 	</div>
 	
-	<script type="text/javascript">
+	<script src="assets/javascript/game.js"></script>
+
+		
 	 
-	 var alphabet = ['a','b','c','d','e','f','g','h','i','j','k','l',
-    'm','n','o','p','q','r','s','t','u','v','w','x','y','z'];
-	var wins = 0;
-	var losses = 0;
-	var guesses = 9;
-	var userGuesses = 0;
-	
+	 	
 
-
-	document.onkeypress = function(event) {
-	
-    	var userGuess = event.key;
-
-   	 	var computerChoice = alphabet[Math.floor(Math.random() * alphabet.length)];
-
-   	 	console.log(computerChoice)
-
-    if(userGuess === computerChoice){
-        wins++;
-    }else{
-        guesses--;
-    }
-
-    if(guesses = 0){
-        losses++
-    }
-
-    
-  
-    document.getElementById('wins').innerHTML = "Wins: " + wins;
-    document.getElementById('losses').innerHTML = "Losses: " + losses;
-    document.getElementById('guesses').innerHTML = "Guesses left: " + guesses;
-    document.getElementById('user-guess').innerHTML="Your Guesses So Far: " + userGuess;
-}
 	</script>
 </body>
 </html>
